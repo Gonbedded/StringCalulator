@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StringCalcluatorNewTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-12-07T17:08:24" hostname="DESKTOP-MSF20OG" time="0.058">
+<testsuite name="StringCalcluatorNewTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-12-07T17:13:59" hostname="DESKTOP-MSF20OG" time="0.056">
   <properties/>
-  <testcase name="testSum()" classname="StringCalcluatorNewTest" time="0.058">
+  <testcase name="testSum()" classname="StringCalcluatorNewTest" time="0.056">
     <failure message="java.lang.AssertionError: &#13;&#10;Expecting:&#13;&#10; &lt;10&gt;&#13;&#10;to be equal to:&#13;&#10; &lt;130&gt;&#13;&#10;but was not." type="java.lang.AssertionError">java.lang.AssertionError: 
 Expecting:
  &lt;10&gt;
