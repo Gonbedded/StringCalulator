@@ -9,8 +9,8 @@ public class StringCalcluatorNewTest {
     public void testSum() {
         StringCalcluatorNew s = new StringCalcluatorNew();
 
-        int calculate = s.calculate("123+3+4");
+        int calculate = s.calculate("222+333+44+5");
 
-        assertThat(10).isEqualTo(calculate);
+        assertThat(604).isEqualTo(calculate);
     }
 }

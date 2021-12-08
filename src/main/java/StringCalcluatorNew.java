@@ -7,25 +7,10 @@ public class StringCalcluatorNew {
         String[] operator_buf = input.split( "\\d");
         String[] operator_cmp = {"+","-","*","/","X"};
 
-        System.out.println("operator1"+operator_buf[0]);
-        System.out.println("operator1"+operator_buf[1]);
-        System.out.println("operator1"+operator_buf[2]);
-        System.out.println("operator1"+operator_buf[3]);
-
         int idx= 0;
         int result = 0;
         int oper_idx = 0;
         int cnt = 0;
-        int[] value_len =  new int[value_buf.length];
-
-        for (String s : value_buf) {
-            value_len[cnt] = value_buf[cnt].length();
-            cnt++;
-        }
-
-        System.out.println("len1 : "+value_len.length);
-        System.out.println("len2 : "+value_len[0]);
-        System.out.println("len3 : "+value_len[1]);
 
         List<Integer> list = new ArrayList<>();
 
@@ -33,26 +18,20 @@ public class StringCalcluatorNew {
             list.add(Integer.parseInt(s));
         }
 
-        for (int i : value_len) {
-            System.out.println("idx"+idx);
-            operator_buf[oper_idx] = operator_buf[value_len[0]+idx];
-            operator_buf[value_len[0]+idx] = operator_cmp[4];
-            oper_idx++;
-            idx++;
-            if(idx == value_len.length-1)
-                break;
-        }
-        System.out.println("operator"+operator_buf[0]);
-        System.out.println("operator"+operator_buf[1]);
-        System.out.println("operator"+operator_buf[2]);
-        System.out.println("operator"+operator_buf[3]);
+        for (String i : operator_buf) {
+            if(operator_buf[idx].equals(operator_cmp[0]) || operator_buf[idx].equals(operator_cmp[1]) ||operator_buf[idx].equals(operator_cmp[2]) ||operator_buf[idx].equals(operator_cmp[3])){
+                operator_buf[oper_idx] = operator_buf[idx];
+                operator_buf[idx] = operator_cmp[4];
+                oper_idx++;
+            }
+                idx++;
+            }
 
         idx = 0;
 
         result += list.get(0);
 
-        for (int i : value_len) {
-            //22, 33
+        for (String s : value_buf) {
             idx++;
             if(operator_buf[idx-1].equals(operator_cmp[0])){
                 result += list.get(idx);
@@ -67,10 +46,10 @@ public class StringCalcluatorNew {
                 result /= list.get(idx);
             }
             else{
-
+                //No Op
             }
-            System.out.println("cnt"+idx+ " re: " + result);
         }
+        System.out.println("Result:"+ result);
         return result;
     }
 }
